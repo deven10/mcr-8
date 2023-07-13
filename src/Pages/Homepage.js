@@ -21,6 +21,7 @@ export const Homepage = () => {
   return (
     <div>
       <Nav />
+      <hr />
       <main>
         <div className="header">
           <h1>Meetup Events</h1>

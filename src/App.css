@@ -244,3 +244,12 @@ nav input{
   color: #333;
   font-family: sans-serif;
 }
+
+.home-link{
+  font-size: 22px;
+  font-family: sans-serif;
+  text-decoration: none;
+  color: #111;
+  font-weight: 600;
+  cursor: pointer;
+}
