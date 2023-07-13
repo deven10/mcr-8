@@ -35,8 +35,8 @@ export const DataContext = ({ children }) => {
   useEffect(() => {
     const newData = data.meetups.filter(
       (meeting) =>
-        meeting.title.toLowerCase().includes(search) ||
-        meeting.eventTags.join("").toLowerCase().includes(search)
+        meeting.title.toLowerCase().includes(search.toLowerCase()) ||
+        meeting.eventTags.join("").toLowerCase().includes(search.toLowerCase())
     );
     setMeetingsData(newData);
   }, [search]);

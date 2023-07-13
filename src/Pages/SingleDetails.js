@@ -7,7 +7,8 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Modal from "@mui/material/Modal";
 
-const RSVPModal = () => {
+const RSVPModal = ({ meeting }) => {
+  const { meetingsData, setMeetingsData } = useContext(ContextData);
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -15,7 +16,20 @@ const RSVPModal = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
 
-  const handleRSVP = () => {};
+  const handleRSVP = () => {
+    if (name !== "" && email !== "") {
+      const updatedMeetUpsData = meetingsData.map((meetup) =>
+        meetup.id === meeting.id ? { ...meetup, rsvped: true } : meetup
+      );
+      setMeetingsData(updatedMeetUpsData);
+      setName("");
+      setEmail("");
+    } else {
+      alert("Please enter all fields");
+      setName("");
+      setEmail("");
+    }
+  };
 
   const style = {
     position: "absolute",
@@ -30,7 +44,11 @@ const RSVPModal = () => {
   };
   return (
     <div>
-      <Button onClick={handleOpen}>RSVP</Button>
+      {meeting.rsvped ? (
+        <Button>Already RSVPed</Button>
+      ) : (
+        <Button onClick={handleOpen}>RSVP</Button>
+      )}
       <Modal
         open={open}
         aria-labelledby="modal-modal-title"
@@ -39,13 +57,24 @@ const RSVPModal = () => {
         <Box sx={style}>
           <div className="group">
             <label htmlFor="">Name</label>
-            <input type="text" placeholder="Enter your Name" />
+            <input
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              type="text"
+              placeholder="Enter your Name"
+            />
           </div>
           <div className="group">
             <label htmlFor="">Email</label>
-            <input type="email" placeholder="Enter your Email" />
+            <input
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              type="email"
+              placeholder="Enter your Email"
+            />
           </div>
           <button
+            className="rsvpbtn"
             onClick={() => {
               handleRSVP();
               handleClose();
@@ -128,7 +157,7 @@ export const SingleDetails = () => {
               ))}
             </div>
           </div>
-          <RSVPModal />
+          <RSVPModal meeting={meeting} />
         </div>
       </div>
     </div>
