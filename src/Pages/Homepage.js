@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { Nav } from "../Component/Nav";
 
 export const Homepage = () => {
-  const { meetingsData } = useContext(ContextData);
+  const { meetingsData, selectedValue, handleSelect } = useContext(ContextData);
   const navigate = useNavigate();
   console.log(meetingsData);
 
@@ -24,7 +24,12 @@ export const Homepage = () => {
       <main>
         <div className="header">
           <h1>Meetup Events</h1>
-          <select name="" id="">
+          <select
+            name=""
+            id=""
+            value={selectedValue}
+            onChange={(e) => handleSelect(e)}
+          >
             <option value="">Select an Option</option>
             <option value="both">Both</option>
             <option value="online">Online</option>

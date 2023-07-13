@@ -110,3 +110,137 @@ nav input{
   color: #111;
   font-size: 17px;
 }
+
+.main-single-page{
+  display: flex;
+  width: 100%;
+  align-items: start;
+  justify-self: center;
+  padding: 15px 25px;
+}
+
+.lhs, .rhs{
+  flex: 1;
+}
+
+.lhs h3{
+  color: #333;
+  font-weight: 600;
+  font-family: sans-serif;
+}
+
+.host {
+  margin: 8px 0px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #595959;
+  font-family: sans-serif;
+}
+
+.host span{
+  font-weight: 600;
+  font-size: 16px;
+  color: #333;
+}
+
+.lhs img{
+  width: 350px;
+  height: 300px;
+  object-fit: cover;
+}
+
+.details {
+  margin: 8px 0px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #595959;
+  font-family: sans-serif;
+}
+
+.details span{
+  font-weight: 600;
+  font-size: 16px;
+  color: #333;
+}
+
+.info{
+  font-size: 15px;
+  font-weight: 500;
+  color: #595959;
+  font-family: sans-serif;
+  margin: 8px 0px;
+}
+
+.info .dress, .info .age, .tag{
+  font-size: 15px;
+  font-weight: 500;
+  color: #595959;
+  font-family: sans-serif;
+  margin: 8px 0px;
+}
+
+.info .dress span, .info .age span, .tag span{
+  font-weight: 600;
+  font-size: 16px;
+  color: #333;
+}
+
+.speakers-wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+}
+
+.speaker{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 25px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.speaker img{
+  height: 50px;
+  width: 50px;
+  border: 2px solid #fff;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.speaker p{
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.speaker .name{
+  font-size: 16px;
+  color: #111;
+  font-weight: 600;
+}
+
+.speaker .designation{
+  font-size: 15px;
+  color: #333;
+  font-weight: 400;
+}
+
+.rhs-top{
+  background-color: #fff;
+  padding: 15px 25px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.rhs-top p{
+  font-size: 16px;
+  color: #333;
+  font-family: sans-serif;
+}
