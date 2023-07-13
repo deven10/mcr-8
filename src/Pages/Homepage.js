@@ -6,16 +6,23 @@ import { Nav } from "../Component/Nav";
 export const Homepage = () => {
   const { meetingsData, selectedValue, handleSelect } = useContext(ContextData);
   const navigate = useNavigate();
-  console.log(meetingsData);
 
-  const formatDate = (date) => {
-    // const abc = new Date(date);
-    // const d = abc.getDate();
-    // const m = abc.getMonth().padStart(2, "0");
-    // const y = abc.getFullYear();
-    // const ans = `${d}-${m}-${y}`;
-    // return ans.toString();
-    // console.log(ans);
+  const formatDate = (inputDate) => {
+    const date = new Date(inputDate);
+    const options = {
+      timeZone: "Asia/Kolkata",
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+      hour12: true,
+    };
+
+    const formattedDate = date.toLocaleDateString("en-IN", options);
+    const formattedDateTime = `${formattedDate}`;
+    return formattedDateTime;
   };
 
   return (
